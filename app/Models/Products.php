@@ -10,7 +10,16 @@ class Products extends Model
     use HasFactory;
     protected $primaryKey = 'id';
     protected $table = 'products';
-    protected $fillable = ['name', 'description', 'price', 'quantity', 'unit', 'category_id'];
+
+    protected $fillable = [
+        'name',
+        'description',
+        'price',
+        'quantity',
+        'unit',
+        'image_url',
+        'category_id'
+    ];
 
     public function category()
     {
@@ -26,7 +35,4 @@ class Products extends Model
     {
         return $this->hasMany(OrderItem::class);
     }
-
 }
-
-
