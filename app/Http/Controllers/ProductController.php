@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\V1\ProductResource;
+use App\Models\Products;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -12,9 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $apiUrl = route('/api/products');
-        $response = Http::get($apiUrl);
-        return view('products.index', array('response' => $response));
+        return view('product.index');
+        
     }
 
     /**
@@ -36,9 +37,9 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Products $product)
     {
-        //
+        return new ProductResource($product);
     }
 
     /**

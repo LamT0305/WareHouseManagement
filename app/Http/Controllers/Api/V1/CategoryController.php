@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
-use App\Models\Categories;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -11,7 +11,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = Categories::all();
+        $categories = Category::all();
 
         return response()->json([
             'success' => true,
@@ -21,7 +21,7 @@ class CategoryController extends Controller
 
     public function show($id)
     {
-        $category = Categories::find($id);
+        $category = Category::find($id);
 
         if (!$category) {
             return response()->json([
@@ -42,7 +42,7 @@ class CategoryController extends Controller
             'name' => 'required|unique:categories,name'
         ]);
 
-        $category = Categories::create([
+        $category = Category::create([
             'name' => $request->name
         ]);
 
@@ -54,7 +54,7 @@ class CategoryController extends Controller
 
     public function update(Request $request, $id)
     {
-        $category = Categories::find($id);
+        $category = Category::find($id);
 
         if (!$category) {
             return response()->json([
@@ -71,7 +71,7 @@ class CategoryController extends Controller
             return response()->json(['error' => $validator->errors()], 422);
         }
 
-        $product = Categories::findOrFail($id);
+        $product = Category::findOrFail($id);
         $product->update($request->all());
 
         return response()->json($product, 200);
@@ -79,7 +79,7 @@ class CategoryController extends Controller
 
     public function destroy($id)
     {
-        $category = Categories::find($id);
+        $category = Category::find($id);
 
         if (!$category) {
             return response()->json([
@@ -94,5 +94,14 @@ class CategoryController extends Controller
             'success' => true,
             'message' => 'Category deleted successfully'
         ], 200);
+    }
+    public function getProductsByCategoryId($id) {
+        $category = Category::find($id);
+        if (!$category) {
+            return response()->json(['message' => 'Category not found.'], 404);
+        }
+        
+        $products = $category->products;
+        return response()->json($products, 200);
     }
 }
