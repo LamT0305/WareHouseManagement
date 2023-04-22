@@ -1,4 +1,4 @@
-fetch('/api/products')
+fetch('/api/product')
     .then(response => response.json())
     .then(products => {
         
@@ -18,6 +18,9 @@ fetch('/api/products')
     .catch(error => console.error(error));
 
 // alert('Success');
+
+
+
 
 
 
