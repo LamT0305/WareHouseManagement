@@ -14,6 +14,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <link rel="stylesheet" href="css/style.css">
+    {{-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" /> --}}
+    @yield('head')
 </head>
 
 <body>
@@ -28,7 +30,7 @@
                 <div>
                     <ul class="nav__list">
                         <form action="#" method="get" class="search-form">
-                          <input type="text" id="search-input" name="search-input" class="search-input">
+                          <input type="text" id="search-input" name="search-input" placeholder="Search....." class="search-input">
                           <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
                         </form>
                         <a href="#" class="nav__link active">
@@ -56,13 +58,7 @@
 
 
   <main>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-            @yield('content')
-            </div>
-        </div>
-    </div>
+    @yield('content')
   </main>
 
 
@@ -71,6 +67,7 @@
 
   </footer>
   <!-- Bootstrap JavaScript Libraries -->
+  <script src="{{asset('js/product.js')}}"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
   </script>
@@ -78,6 +75,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
+
 </body>
 
 </html>
