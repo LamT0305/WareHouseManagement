@@ -28,7 +28,7 @@
                 <div>
                     <ul class="nav__list">
                         <form action="#" method="get" class="search-form">
-                          <input type="text" id="search-input" name="search-input" class="search-input">
+                          <input type="text" id="search-input" name="search-input" placeholder="Search" class="search-input">
                           <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
                         </form>
                         <a href="#" class="nav__link active">

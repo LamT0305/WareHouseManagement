@@ -25,8 +25,8 @@ Route::get('/test', function () {
 });
 
 
-Route::get('/create', function () {
-    return view('category.create');
+Route::get('/cart', function () {
+    return view('user.cart');
 });
 
 
