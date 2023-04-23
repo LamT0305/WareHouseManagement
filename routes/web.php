@@ -19,8 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::resource('/product', ProductController::class);
+=======
 Route::get('/test', function () {
     return view('homepage.index');
 });
 
-Route::resource('/products', ProductController::class);
+

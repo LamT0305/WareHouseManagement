@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\V1\CartController;
 use App\Http\Controllers\Api\V1\CategoryController;
 use App\Http\Controllers\Api\V1\ProductController;
 use Illuminate\Http\Request;
@@ -35,3 +36,8 @@ Route::prefix('category')->group(function () {
     Route::delete('/{category}', [CategoryController::class, 'destroy']);
     Route::get('/{id}/products', [CategoryController::class, 'getProductsByCategoryId']);
 });
+
+// API for cart
+Route::get('/cart', [CartController::class, 'getCart']);
+Route::post('/cart', [CartController::class, 'addProduct']);
+Route::delete('/cart/{productId}', [CartController::class, 'deleteProductFromCart']);
