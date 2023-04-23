@@ -5,9 +5,6 @@ body{
     padding: 1rem 0 0 5rem;
     transition: 0.5s;
 }
-h1{
-    margin: 0;
-}
 
 ul, li {
     margin: 0;
@@ -132,18 +129,26 @@ a{
     background-color: #555;
   }
 
-/* form create */
+/* form create */ 
 
+/*
 .create{
-    width: 350px;
+    width: 700px;
     height: auto;
     border-radius: 10px;
     border: 1px solid grey;
     text-align: center;
+    display: block;
+    margin: auto;
+    
 }
 
 .create_form label{
     font-size: 20px;
+}
+
+.create_form create_text-h1{
+    text-align: center;
 }
 
 .create_form input{
@@ -169,7 +174,11 @@ a{
     border: 1px solid grey;
     border-radius: 5px;
     margin-bottom: 20px;
+    border: none;
+    background-color: rgb(79, 204, 79);
 }
+
+*/
 
 
 /* ---------- */

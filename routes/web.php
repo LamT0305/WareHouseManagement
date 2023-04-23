@@ -26,8 +26,9 @@ Route::get('/test', function () {
 
 
 Route::get('/create', function () {
-    return view('product.create');
+    return view('category.create');
 });
+
 
 
 

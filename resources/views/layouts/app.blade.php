@@ -23,7 +23,7 @@
             <div>
                 <a href="#" class="nav__logo">
                     <img src="{{asset('image/logo.png')}}" alt="" class="nav__logo-icon">
-                    <span class="nav__logo-text">WareHouse</span>
+                    <span class="nav__logo-text">MR WareHouse</span>
                 </a>
                 <div>
                     <ul class="nav__list">

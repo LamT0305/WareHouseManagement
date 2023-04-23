@@ -1,9 +1,10 @@
 @extends('layouts.app')
 @section('content')
-
+<link rel="stylesheet" href="css/create-product.css">
 <div class="create">
-        <h1 class="create_text-h1">Create Product</h1>
+        
         <form action="#" method="post" class="create_form">
+            <h1 class="create_text-h1">Create Product</h1>
             <label>Name:</label>
             <div>
                 <input type="text" placeholder="Enter Name" name="">
