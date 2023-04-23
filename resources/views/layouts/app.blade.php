@@ -18,38 +18,53 @@
 
 <body>
   <header>
-    <nav>
-      <div>
-          <ul class="navbar-nav">
-              <div class="container-fluid" style="padding:0">
-                  <a class="navbar-brand" href="#">
-                    <img src="{{asset('Image/logo.jpg')}}" alt="WareHouse" style="width:60px;" class="logo">
-                    <p style="margin:0; font-size:20px; font-weight:600; color:white">MR Warehouse</p>
-                  </a>
-              </div>
-              
-              <form class="d-flex search-form">
-                  <input class="form-control me-2" type="text" placeholder="Search">
-                  <button class="btn btn-primary" type="button">Search</button>
-              </form>
-              <div style="display:flex; flex-direction:column; justify-content: space-between; height:80%">
+  <div class="l-navbar" id="navbar">
+        <div class="nav">
+            <div>
+                <a href="#" class="nav__logo">
+                    <img src="{{asset('image/logo.png')}}" alt="" class="nav__logo-icon">
+                    <span class="nav__logo-text">WareHouse</span>
+                </a>
                 <div>
-                  <li class="nav-item"><a href="">Home</a></li>
-                  <li class="nav-item"><a href="">Category</a></li>  
-                  <li class="nav-item"><a href="">About Us</a></li> 
+                    <ul class="nav__list">
+                        <form action="#" method="get" class="search-form">
+                          <input type="text" id="search-input" name="search-input" class="search-input">
+                          <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
+                        </form>
+                        <a href="#" class="nav__link active">
+                            <i class='bx bx-grid-alt nav__icon' ></i>
+                            <span class="nav__text">Home</span>
+                        </a>
+                        <a href="#" class="nav__link active">
+                            <i class='bx bx-category nav__icon' ></i>
+                            <span class="nav__text">Category</span>
+                        </a>
+                        <a href="#" class="nav__link active">
+                            <i class='bx bx-book-content nav__icon'></i>
+                            <span class="nav__text">Aubout Us</span>
+                        </a>
+                    </ul>
                 </div>
-                  <li class="nav-item"><a href="">Hotline: 19001111</a></li>
-              </div>
-              
-          </ul>
-      </div>
-  </nav>
+                    <a href="#" class="nav__link active">
+                        <i class='bx bxs-phone nav__icon'></i>
+                        <span class="nav__text">Hotline: 19001111</span>
+                    </a>
+            </div>
+        </div>
+    </div>
   </header>
 
 
   <main>
-    @yield('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            @yield('content')
+            </div>
+        </div>
+    </div>
   </main>
+
 
 
   <footer>

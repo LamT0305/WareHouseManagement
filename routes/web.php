@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TestController;
+use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +24,10 @@ Route::get('/test', function () {
     return view('homepage.index');
 });
 
+
 Route::get('/create', function () {
     return view('product.create');
 });
+
+
+

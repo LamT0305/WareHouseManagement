@@ -3,22 +3,24 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
+use App\Models\Categories;
+use App\Models\Category;
 use Illuminate\Http\Request;
-use App\Models\Products;
+use App\Models\Product;
 use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
     public function index()
     {
-        $products = Products::all();
+        $products = Product::all();
 
         return response()->json($products);
     }
 
     public function show($id)
     {
-        $product = Products::findOrFail($id);
+        $product = Product::findOrFail($id);
 
         return response()->json($product);
     }
@@ -39,7 +41,7 @@ class ProductController extends Controller
             return response()->json(['error' => $validator->errors()], 422);
         }
 
-        $product = Products::create([
+        $product = Product::create([
             'name' => $request->name,
             'description' => $request->description,
             'price' => $request->price,
@@ -68,7 +70,7 @@ class ProductController extends Controller
             return response()->json(['error' => $validator->errors()], 422);
         }
 
-        $product = Products::findOrFail($id);
+        $product = Product::findOrFail($id);
         $product->update($request->all());
 
         return response()->json($product, 200);
@@ -76,9 +78,16 @@ class ProductController extends Controller
 
     public function destroy($id)
     {
-        $product = Products::findOrFail($id);
+        $product = Product::findOrFail($id);
         $product->delete();
 
         return response()->json(null, 204);
+    }
+
+    public function getProductsByCategory($name)
+    {
+        $category = Category::where('name', $name)->firstOrFail();
+        $products = $category->products()->get();
+        return response()->json($products, 200);
     }
 }
