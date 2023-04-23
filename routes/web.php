@@ -15,9 +15,13 @@ use App\Http\Controllers\TestController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('product.index');
 });
 
 Route::get('/test', function () {
     return view('homepage.index');
+});
+
+Route::get('/create', function () {
+    return view('product.create');
 });
