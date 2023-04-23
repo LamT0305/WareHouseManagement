@@ -43,3 +43,49 @@ nav > div {
     font-size: 20px;
 
 }
+
+body{
+    display: flex;
+}
+
+/* form create */
+
+.create{
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid grey;
+    text-align: center;
+}
+
+.create_form label{
+    font-size: 20px;
+}
+
+.create_form input{
+    border-radius: 5px;
+    border: 1px solid grey;
+    width: 300px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.create_form select{
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 300px;
+    font-size: 15px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.create_form button{
+    width: 300px;
+    height: 40px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+
+/* ---------- */

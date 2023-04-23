@@ -34,11 +34,11 @@
               </form>
               <div style="display:flex; flex-direction:column; justify-content: space-between; height:80%">
                 <div>
-                  <li class="nav-item"><a href="https://quantrimang.com/">Home</a></li>
-                  <li class="nav-item"><a href="https://quantrimang.com/lang-cong-nghe">Category</a></li>  
-                  <li class="nav-item"><a href="https://quantrimang.com/cong-nghe">About Us</a></li> 
+                  <li class="nav-item"><a href="">Home</a></li>
+                  <li class="nav-item"><a href="">Category</a></li>  
+                  <li class="nav-item"><a href="">About Us</a></li> 
                 </div>
-                  <li class="nav-item"><a href="https://quantrimang.com/cong-nghe">Hotline: 19001111</a></li>
+                  <li class="nav-item"><a href="">Hotline: 19001111</a></li>
               </div>
               
           </ul>
@@ -50,7 +50,6 @@
   <main>
     @yield('content')
   </main>
-
 
 
   <footer>
