@@ -21,7 +21,7 @@
   <div class="l-navbar" id="navbar">
         <div class="nav">
             <div>
-                <a href="#" class="nav__logo">
+                <a href="{{url('/')}}" class="nav__logo">
                     <img src="{{asset('image/logo.png')}}" alt="" class="nav__logo-icon">
                     <span class="nav__logo-text">MR WareHouse</span>
                 </a>
@@ -31,11 +31,11 @@
                           <input type="text" id="search-input" name="search-input" placeholder="Search" class="search-input">
                           <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
                         </form>
-                        <a href="#" class="nav__link active">
+                        <a href="{{url('/')}}" class="nav__link active">
                             <i class='bx bx-grid-alt nav__icon' ></i>
                             <span class="nav__text">Home</span>
                         </a>
-                        <a href="#" class="nav__link active">
+                        <a href="{{url('/category')}}" class="nav__link active">
                             <i class='bx bx-category nav__icon' ></i>
                             <span class="nav__text">Category</span>
                         </a>
@@ -56,13 +56,7 @@
 
 
   <main>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-            @yield('content')
-            </div>
-        </div>
-    </div>
+    @yield('content')
   </main>
 
 
@@ -71,6 +65,7 @@
 
   </footer>
   <!-- Bootstrap JavaScript Libraries -->
+  <script src="{{asset('js/product.js')}}"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
   </script>
@@ -78,6 +73,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
+
 </body>
 
 </html>

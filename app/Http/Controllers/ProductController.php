@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\V1\ProductResource;
+use App\Models\Product;
 use App\Models\Products;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -37,9 +38,10 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Products $product)
+    public function show($id)
     {
-        return new ProductResource($product);
+        $product = Product::find($id);
+        return view('product.show', ['product' => $product]);
     }
 
     /**
