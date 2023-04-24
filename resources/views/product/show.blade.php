@@ -19,11 +19,13 @@
             <div style="display:flex; align-items:center">
                 <div class="quantity">
                     <button class="quantity-button minus" type="button" onclick="decreaseQuantity()">-</button>
-                    <input type="number" class="quantity-input" name="quantity" value="1" min="1" style="width: 55px">
-                    <button class="quantity-button plus" type="button" onclick="increaseQuantity()" style="margin-right:20px">+</button>
+                    <input type="number" class="quantity-input" name="quantity" value="1" min="1"
+                        style="width: 55px">
+                    <button class="quantity-button plus" type="button" onclick="increaseQuantity()"
+                        style="margin-right:20px">+</button>
                 </div>
 
-                <button style="submit">Add to cart</button>
+                <button style="submit" onclick="handleAddToCart({{$product->id}})">Add to cart</button>
             </div>
 
         </div>
@@ -32,7 +34,7 @@
         <h3 style="text-align:center; margin: 70px 0;">You may also like:</h3>
         <div>
             <div class="preview" id="preview">
-            
+
             </div>
         </div>
     </div>

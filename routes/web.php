@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TestController;
@@ -37,5 +38,8 @@ Route::get('/cart', function () {
 Route::get('/test', function () {
     return view('homepage.index');
 });
+
+
+Route::resource('/cart', CartController::class);
 
 

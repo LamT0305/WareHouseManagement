@@ -40,4 +40,5 @@ Route::prefix('category')->group(function () {
 // API for cart
 Route::get('/cart', [CartController::class, 'getCart']);
 Route::post('/cart', [CartController::class, 'addProduct']);
+Route::put('/cart/update/{id}', [CartController::class, 'updateCartQuantity']);
 Route::delete('/cart/{productId}', [CartController::class, 'deleteProductFromCart']);

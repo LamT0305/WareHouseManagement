@@ -37,4 +37,26 @@ fetch('/api/product')
         });
         document.querySelector('#preview').innerHTML = productsHtml;
     })
-    .catch(error => console.error(error)); 
+    .catch(error => console.error(error));
+
+function handleAddToCart(id) {
+   
+        let quantity = document.querySelector('.quantity-input')
+        let currentValue = parseInt(quantity.value)
+        fetch('/api/cart', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                product_id: id,
+                quantity: currentValue
+            })
+        }).then(response => response.json())
+            .then((res) => {
+                alert('Add to cart successfully')
+                console.log(res);
+            }).catch(error => console.error(error));
+    
+
+}

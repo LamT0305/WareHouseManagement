@@ -6,7 +6,7 @@
 @endsection
 @section('content')
     <div class="cart-icon">
-        <a href="{{url('/')}}">
+        <a href="{{url('/cart')}}">
             <img src="{{ asset('image/cart.png') }}" alt="cart-item">
 
         </a>
