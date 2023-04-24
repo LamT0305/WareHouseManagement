@@ -89,19 +89,12 @@ a{
     margin: 20px auto;
   }
   
-  .search-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px auto;
-  }
-  
   .search-label {
     display: none;
   }
   
   .search-input {
-    width: 200px;
+    width: 20rem;
     height: 40px;
     padding: 10px;
     border-radius: 10px;

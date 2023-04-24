@@ -1,9 +1,5 @@
 /* form create */
 
-body{
-
-    background-color: #7a7878;
-}
 
 .create{
     width: 700px;
@@ -13,8 +9,7 @@ body{
     text-align: center;
     display: block;
     margin: auto;
-    background-color: rgb(56, 54, 54);
-    color: aliceblue;
+    background-color: #f8f8f8;
     font-weight: 700;
 }
 

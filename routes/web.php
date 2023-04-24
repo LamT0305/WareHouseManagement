@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\TestController;
 
@@ -21,8 +22,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('/', ProductController::class);
 
+Route::resource('/category', CategoryController::class);
+
 Route::get('/test', function () {
-    return view('homepage.index');
+    return view('category.update');
 });
+
+
 
 

@@ -1,9 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.adminlayout')
 @section('content')
-<link rel="stylesheet" href="css/create-product.css">
-<div class="create">
-        
-        <form action="#" method="post" class="create_form">
+<link rel="stylesheet" href="css/category/create-category.css">
+<div class="create"> 
+        <form action="/category" method="post" class="create_form">
             <h1 class="create_text-h1">Create Category</h1>
             <label>Name:</label>
             <div>
