@@ -23,7 +23,7 @@
   <div class="l-navbar" id="navbar">
         <div class="nav">
             <div>
-                <a href="#" class="nav__logo">
+                <a href="{{url('/')}}" class="nav__logo">
                     <img src="{{asset('image/logo.png')}}" alt="" class="nav__logo-icon">
                     <span class="nav__logo-text">WareHouse</span>
                 </a>
@@ -33,11 +33,11 @@
                           <input type="text" id="search-input" name="search-input" placeholder="Search....." class="search-input">
                           <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
                         </form>
-                        <a href="#" class="nav__link active">
+                        <a href="{{url('/')}}" class="nav__link active">
                             <i class='bx bx-grid-alt nav__icon' ></i>
                             <span class="nav__text">Home</span>
                         </a>
-                        <a href="#" class="nav__link active">
+                        <a href="{{url('/category')}}" class="nav__link active">
                             <i class='bx bx-category nav__icon' ></i>
                             <span class="nav__text">Category</span>
                         </a>
