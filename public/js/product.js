@@ -26,7 +26,7 @@ fetch('/api/product')
     })
     .catch(error => console.error(error));
 
-// alert('Success');
+alert('Success');
 
 fetch('/api/product')
     .then(response => response.json())

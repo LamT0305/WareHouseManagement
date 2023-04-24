@@ -16,12 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('product.index');
-});
 
 
-Route::resource('/product', ProductController::class);
+
+Route::resource('/', ProductController::class);
+
 Route::get('/test', function () {
     return view('homepage.index');
 });

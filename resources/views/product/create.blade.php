@@ -1,8 +1,13 @@
 @extends('layouts.app')
+@section('title', 'create')
+
+@section('head')
+    <link rel="stylesheet" href="{{ asset('css/create-product.css') }}">
+
+@endsection
 @section('content')
-<link rel="stylesheet" href="css/create-product.css">
-<div class="create">
-        
+    <div class="create">
+
         <form action="#" method="post" class="create_form">
             <h1 class="create_text-h1">Create Product</h1>
             <label>Name:</label>
@@ -18,15 +23,15 @@
                 <input type="text" placeholder="Enter Price" name="">
             </div>
             <label>Quantity:</label>
-            <div>  
+            <div>
                 <input type="text" placeholder="Enter Quantity" name="">
             </div>
             <label>Unit:</label>
-            <div>                
+            <div>
                 <input type="text" placeholder="Enter Unit" name="">
             </div>
             <label>Image:</label>
-            <div>               
+            <div>
                 <input type="text" placeholder="Enter Image" name="">
             </div>
             <label>Select Category:</label>

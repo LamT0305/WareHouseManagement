@@ -13,7 +13,8 @@
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    @yield('head')
 </head>
 
 <body>
@@ -65,7 +66,7 @@
 
   </footer>
   <!-- Bootstrap JavaScript Libraries -->
-  <script src="{{asset('js/product.js')}}"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
   </script>
