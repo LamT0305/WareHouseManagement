@@ -11,8 +11,10 @@ class CategoryController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        return view('category.index');
+    {   
+        $category = Category::all();
+        // dd($category);
+        return view('category.index', ['category' => $category]);
     }
 
     public function showlist()
@@ -24,10 +26,13 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('category.create');
     }
 
-
+    public function store()
+    {
+        
+    }
 
     /**
      * Display the specified resource.
@@ -42,7 +47,8 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $category = Category::find($id);
+        return view('category.edit', ['category' => $category]);
     }
 
 

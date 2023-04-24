@@ -29,15 +29,15 @@ Route::get('/product/edit/{id}', [ProductController::class, 'edit']);
 Route::post('/product/create', [ProductController::class, 'store']);
 Route::put('/product/update/{id}', [ProductController::class, 'update']);
 Route::resource('/product', ProductController::class);
-Route::resource('/category', CategoryController::class);
+
+Route::get('/category', [CategoryController::class, 'index']);
+Route::get('/category/create', [CategoryController::class, 'create']);
+Route::get('/category/edit/{id}', [CategoryController::class, 'edit']);
 
 Route::get('/cart', function () {
     return view('user.cart');
 });
 
-Route::get('/test', function () {
-    return view('homepage.index');
-});
 
 
 Route::resource('/cart', CartController::class);

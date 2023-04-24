@@ -1,0 +1,79 @@
+
+.h1_text{
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+form, a {
+    display: inline-block;
+
+}
+
+.btn_create{
+    padding: 10px 30px;
+    border: none;
+    background-color: rgb(67, 67, 255);
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+
+}
+
+.btn_delete{
+    padding: 10px 21px;
+    border: none;
+    background-color: rgb(255, 67, 67);
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn_edit{
+    padding: 10px 30px;
+    border: none;
+    background-color: rgb(67, 67, 255);
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+
+}
+
+.list_category{
+    width: auto;
+    height: auto;
+    text-align: center;
+    display: block;
+    font-weight: 700;
+    background-color: white;
+}
+
+.action_btn{
+    width: 15%;  
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+}
+  
+th, td {
+    padding: 8px;
+    border: 1px solid black;
+}
+
+table th:nth-child(1),
+table td:nth-child(1) {
+    width: 50px; /* decrease width of ID column */
+}
+  
+
+
+

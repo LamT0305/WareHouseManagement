@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cart;
 use App\Models\Order;
+use App\Models\OrderItem;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class OrderController extends Controller
@@ -23,9 +26,16 @@ class OrderController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, $orderID)
     {
+        $cart = Order::find($orderID);
+        if($cart)
+
+        $cart = DB::table('carts')->select()->get();
+
         
+
+        return response()->json($cart, 200);
     }
 
     /**

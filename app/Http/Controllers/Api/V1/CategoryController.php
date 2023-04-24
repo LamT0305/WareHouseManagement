@@ -40,6 +40,13 @@ class CategoryController extends Controller
             'name' => 'required|unique:categories,name'
         ]);
 
+        $cate = DB::table('categories')->where('name', $request->name)->first();
+        if ($cate) {
+            return response()->json([
+                'success' => false,
+            ], 404);
+        }
+
         $category = Category::create([
             'name' => $request->name
         ]);
@@ -93,12 +100,13 @@ class CategoryController extends Controller
             'message' => 'Category deleted successfully'
         ], 200);
     }
-    public function getProductsByCategoryId($id) {
+    public function getProductsByCategoryId($id)
+    {
         $category = Category::find($id);
         if (!$category) {
             return response()->json(['message' => 'Category not found.'], 404);
         }
-        
+
         $products = $category->products;
         return response()->json($products, 200);
     }
