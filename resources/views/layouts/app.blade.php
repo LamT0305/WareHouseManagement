@@ -13,9 +13,7 @@
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <link rel="stylesheet" href="css/style.css">
-    {{-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" /> --}}
-    @yield('head')
+    <link rel="stylesheet" href="css/app.css">
 </head>
 
 <body>
@@ -25,12 +23,12 @@
             <div>
                 <a href="{{url('/')}}" class="nav__logo">
                     <img src="{{asset('image/logo.png')}}" alt="" class="nav__logo-icon">
-                    <span class="nav__logo-text">WareHouse</span>
+                    <span class="nav__logo-text">MR WareHouse</span>
                 </a>
                 <div>
                     <ul class="nav__list">
                         <form action="#" method="get" class="search-form">
-                          <input type="text" id="search-input" name="search-input" placeholder="Search....." class="search-input">
+                          <input type="text" id="search-input" name="search-input" placeholder="Search" class="search-input">
                           <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
                         </form>
                         <a href="{{url('/')}}" class="nav__link active">

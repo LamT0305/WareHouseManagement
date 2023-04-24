@@ -1,0 +1,57 @@
+/* form create */
+
+body{
+
+    background-color: #7a7878;
+}
+
+.create{
+    width: 700px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid grey;
+    text-align: center;
+    display: block;
+    margin: auto;
+    background-color: rgb(56, 54, 54);
+    color: aliceblue;
+    font-weight: 700;
+}
+
+.create_form label{
+    font-size: 20px;
+}
+
+.create_form create_text-h1{
+    text-align: center;
+}
+
+.create_form input{
+    border-radius: 5px;
+    border: 1px solid grey;
+    width: 300px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.create_form select{
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 300px;
+    font-size: 15px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.create_form button{
+    width: 300px;
+    height: 40px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: none;
+    background-color: rgb(79, 204, 79);
+}
+
+
+/* ---------- */
