@@ -6,6 +6,12 @@ body{
 }
 
 .create{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+
     width: 700px;
     height: auto;
     border-radius: 10px;
@@ -16,10 +22,14 @@ body{
     background-color: rgb(56, 54, 54);
     color: aliceblue;
     font-weight: 700;
+    padding: 30px 0;
 }
 
 .create_form label{
     font-size: 20px;
+    width: 90%;
+    margin: auto;
+    
 }
 
 .create_form create_text-h1{
@@ -29,7 +39,7 @@ body{
 .create_form input{
     border-radius: 5px;
     border: 1px solid grey;
-    width: 300px;
+    width: 65%;
     height: 40px;
     margin-bottom: 10px;
 }

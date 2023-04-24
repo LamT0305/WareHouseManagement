@@ -5,18 +5,16 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::all();
+        $categories = DB::table('categories')->select()->get();
 
-        return response()->json([
-            'success' => true,
-            'data' => $categories
-        ], 200);
+        return response()->json($categories);
     }
 
     public function show($id)

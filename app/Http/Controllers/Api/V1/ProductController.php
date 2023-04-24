@@ -7,13 +7,25 @@ use App\Models\Categories;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
+        $products = DB::table('products')->join('categories', 'categories.id', '=', 'products.category_id')
+            ->select(
+                'products.id',
+                'products.name',
+                'products.description',
+                'products.price',
+                'products.quantity',
+                'products.image_url',
+                'products.unit',
+                'products.category_id',
+                'categories.name as category_name',
+            )->get();
 
         return response()->json($products);
     }
@@ -51,7 +63,7 @@ class ProductController extends Controller
             'category_id' => $request->category_id
         ]);
 
-        return response()->json($product, 201);
+        return response()->json($product);
     }
 
     public function update(Request $request, $id)
@@ -73,7 +85,7 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $product->update($request->all());
 
-        return response()->json($product, 200);
+        return response()->json($product);
     }
 
     public function destroy($id)

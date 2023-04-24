@@ -7,14 +7,18 @@ fetch('/api/product')
             productsHtml += `
                     
                         <div class="col">
-                            <div class="card-body item">  
+                            <div class="item">  
                                 <div class="img-product">
                                     <img src="${product.image_url}"/>
-                                </div>                                                          
-                                <a href="/product/${product.id}"><p>${product.name}</p></a>
-                                <p>Mô tả: ${product.description}</p>
-                                <p>Giá tiền: ${product.price}</p>
-                                <p>Số Lượng: ${product.quantity}</p>
+                                </div>    
+                                <div style="margin:20px 0;">
+                                    <a href="/product/${product.id}"><p>${product.name}</p></a>
+                                    
+                                    <p>Giá tiền: ${product.price}</p>
+                                    <p>Số Lượng: ${product.quantity}</p>
+                                    <a href="/product/${product.id}" class="btnView">View</a>
+                                </div>                                                      
+                                
                             </div>
                         </div>                        
                     
@@ -22,11 +26,11 @@ fetch('/api/product')
         });
         document.querySelector('#products').innerHTML = productsHtml;
 
-       
+
     })
     .catch(error => console.error(error));
 
-alert('Success');
+// alert('Success');
 
 fetch('/api/product')
     .then(response => response.json())
@@ -39,21 +43,29 @@ fetch('/api/product')
         firstFiveProducts.forEach(product => {
             productsHtml += `
                 <div class="col-pre">
-                    <div class="card-body pre">
-                        <img src="${product.image_url}"/>
-                        <a href="/product/${product.id}"><p>${product.name}</p></a>
-                        <p>${product.description}</p>
-                        <p>${product.price}</p>
-                        <p>${product.quantity}</p>
-                    </div>
+                    
+                        <div class="item">  
+                            <div class="img-product">
+                                <img src="${product.image_url}"/>
+                            </div>    
+                            <div style="margin:20px 0;">
+                                <a href="/product/${product.id}"><p>${product.name}</p></a>
+                                
+                                <p>Giá tiền: ${product.price}</p>
+                                <p>Số Lượng: ${product.quantity}</p>
+                                <a href="/product/${product.id}" class="btnView">View</a>
+                            </div>                                                      
+                            
+                        </div>
+                   
                 </div>                        
             `;
         });
         document.querySelector('#preview').innerHTML = productsHtml;
     })
-    .catch(error => console.error(error)); 
+    .catch(error => console.error(error));
 
-    
+
 
 
 
