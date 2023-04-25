@@ -48,11 +48,7 @@ function handleAddCategory() {
         body: JSON.stringify({ name: name })
     }).then(response => response.json())
         .then((res) => {
-            if(res.success === true) {
-                alert('Updated category in category list');
-            }else{
-                alert('Category name was not updated');
-            }
+            alert('Added category');
         }).catch(e => console.error(e));
 }
 
