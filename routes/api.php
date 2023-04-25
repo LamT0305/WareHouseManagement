@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\V1\CartController;
 use App\Http\Controllers\Api\V1\CategoryController;
+use App\Http\Controllers\Api\V1\OrderController;
 use App\Http\Controllers\Api\V1\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -40,4 +41,10 @@ Route::prefix('category')->group(function () {
 // API for cart
 Route::get('/cart', [CartController::class, 'getCart']);
 Route::post('/cart', [CartController::class, 'addProduct']);
+Route::put('/cart/update/{id}', [CartController::class, 'updateCartQuantity']);
 Route::delete('/cart/{productId}', [CartController::class, 'deleteProductFromCart']);
+
+// API for order
+
+Route::get('/order', [OrderController::class, 'index']);
+Route::get('/orders/{id}', [OrderController::class, 'store']);

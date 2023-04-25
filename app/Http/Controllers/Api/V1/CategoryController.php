@@ -5,18 +5,16 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::all();
+        $categories = DB::table('categories')->select()->get();
 
-        return response()->json([
-            'success' => true,
-            'data' => $categories
-        ], 200);
+        return response()->json($categories);
     }
 
     public function show($id)
@@ -41,6 +39,13 @@ class CategoryController extends Controller
         $this->validate($request, [
             'name' => 'required|unique:categories,name'
         ]);
+
+        $cate = DB::table('categories')->where('name', $request->name)->first();
+        if ($cate) {
+            return response()->json([
+                'success' => false,
+            ], 404);
+        }
 
         $category = Category::create([
             'name' => $request->name
@@ -95,12 +100,13 @@ class CategoryController extends Controller
             'message' => 'Category deleted successfully'
         ], 200);
     }
-    public function getProductsByCategoryId($id) {
+    public function getProductsByCategoryId($id)
+    {
         $category = Category::find($id);
         if (!$category) {
             return response()->json(['message' => 'Category not found.'], 404);
         }
-        
+
         $products = $category->products;
         return response()->json($products, 200);
     }

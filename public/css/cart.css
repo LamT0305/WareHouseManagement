@@ -1,0 +1,85 @@
+body{
+    background-color: #7a7878;
+}
+
+.cart{
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid grey;
+    text-align: center;
+    display: block;
+    font-weight: 700;
+    background-color: rgb(56, 54, 54);
+    color: aliceblue;
+    padding-bottom: 20px;
+}
+
+.cart h2{
+    margin: 20px;
+    padding-bottom: 20px;
+}
+
+.Cart_Text{
+    margin: 70px;
+    font-size: 20px;
+}
+
+.avt_user{
+    align-items: center;
+    margin-top: 20px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.cart_table{
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid grey;
+    text-align: center;
+    display: block;
+    font-weight: 700;
+    background-color: rgb(56, 54, 54);
+    color: aliceblue;
+    padding-bottom: 20px;
+}
+
+.head-text{
+    width: calc(100%/7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-top: 15px; */
+}
+
+.header-table{
+    padding: 15px 0;
+    border-bottom: 1px solid ;
+}
+
+.cart-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid ;
+    padding: 10px 0;
+}
+.img-cart{
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+}
+
+.cart-item{
+    width: calc(100%/7);
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    color: white !important;
+}
+
+

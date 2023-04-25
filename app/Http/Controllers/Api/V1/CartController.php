@@ -32,17 +32,40 @@ class CartController extends Controller
     {
         $product = DB::table('products')
             ->join('carts', 'carts.product_id', '=', 'products.id')
-            ->select('carts.id','carts.product_id','products.name', 'products.description', 'products.price', 'carts.quantity')
+            ->select(
+                'carts.id',
+                'carts.product_id',
+                'products.name',
+                'products.description',
+                'products.price',
+                'carts.quantity',
+                'products.image_url'
+            )
             ->get();
-        return response()->json(['message' => 'success', $product], 200);
+        $count = count($product);
+        return response()->json(['message' => 'success', 'Total' => $count, 'ArrayList' => $product], 200);
     }
 
 
     public function deleteProductFromCart(Request $request, $productId)
     {
         DB::table('carts')
-        ->where('product_id', $productId)
-        ->delete();
-        return response()->json(['message' => 'success'],200);
+            ->where('product_id', $productId)
+            ->delete();
+        return response()->json(['message' => 'success'], 200);
+    }
+
+    public function updateCartQuantity(Request $request, $id)
+    {
+        $cart = DB::table('carts')->find($id);
+        if ($cart) {
+            DB::table('carts')
+                ->where('id', $id)
+                ->update(['quantity' => $request->quantity]);
+            $updatedCart = DB::table('carts')->find($id);
+            return response()->json(['message' => 'Cart item quantity updated', 'cart' => $updatedCart], 200);
+        } else {
+            return response()->json(['message' => 'Cart item not found'], 404);
+        }
     }
 }
